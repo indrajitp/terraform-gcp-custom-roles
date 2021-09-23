@@ -73,7 +73,29 @@ variable "dev_role_id" {
   description = "dev role service account name"
 }
 
-roles/accesscontextmanager.gcpAccessAdmin
-roles/accesscontextmanager.policyAdmin
-roles/cloudbuild.builds.approver
-roles/cloudbuild.workerPoolOwner
+"roles/appengine.appViewer",
+"roles/appengine.codeViewer", 
+"roles/bigquery.dataViewer",  
+"roles/bigquery.filteredDataViewer",  
+"roles/bigquery.metadataViewer",  
+"roles/bigquery.resourceViewer",  
+"roles/bigtable.reader",
+"roles/bigtable.viewer",
+"roles/cloudsql.viewer",  
+"roles/storage.objectViewer",  
+"roles/container.viewer",
+"roles/container.clusterViewer",
+"roles/pubsub.viewer",
+"roles/billing.viewer"
+"roles/cloudbuild.builds.viewer",
+"roles/cloudkms.publicKeyViewer",    
+"roles/firebase.viewer",
+"roles/compute.viewer",  
+"roles/cloudfunctions.viewer",
+"roles/file.viewer",
+"roles/deploymentmanager.viewer",
+"roles/dlp.reader",
+"roles/deploymentmanager.typeViewer",
+"roles/cloudbuild.integrationsViewer",
+"roles/cloudbuild.workerPoolViewer",
+"roles/storagetransfer.viewer"
