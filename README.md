@@ -1,3 +1,22 @@
+roles/compute.imageUser
+roles/compute.networkUser
+
+
+
+
+roles/compute.orgFirewallPolicyUser
+roles/compute.osLogin
+roles/compute.packetMirroringUser
+roles/osconfig.guestPolicyEditor
+
+
+
+roles/compute.viewer
+roles/compute.networkViewer
+roles/osconfig.guestPolicyViewer
+roles/osconfig.inventoryViewer
+
+
 # Google IAM Terraform Module
 
 This is a collection of submodules that make it easier to non-destructively manage multiple IAM roles for resources on Google Cloud Platform:
