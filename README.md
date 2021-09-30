@@ -1,21 +1,3 @@
-roles/compute.imageUser
-roles/compute.networkUser
-
-
-
-
-roles/compute.orgFirewallPolicyUser
-roles/compute.osLogin
-roles/compute.packetMirroringUser
-roles/osconfig.guestPolicyEditor
-
-
-
-roles/compute.viewer
-roles/compute.networkViewer
-roles/osconfig.guestPolicyViewer
-roles/osconfig.inventoryViewer
-
 
 # Google IAM Terraform Module
 
