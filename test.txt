@@ -1,0 +1,62 @@
+
+## Assign roles to user
+
+Users of GCP project has been categorized in 3 types here - 
+  - Project Admin
+  - Developer 
+  - Viewer 
+
+Any user or google group or service account can be added to one of these type. details of what access user gets in each of this category is explained below -
+
+### Project Admin role
+
+This Role is ideal for Admin/Team Leads/Project managers and Site Reliability Engineers.
+User/group/service account added to this role gets access to create/delete/view all FedRamp approved GCP resources such as compute, Bigquery, Cloud SQL etc. Click here to see all approved GCP resource list.
+To add users to admin role provide list of users in terraform.tfvars files `project_details -> your_project -> admin_members` section like shown below -
+```
+project_details = {
+  "project-1" = {
+    ...
+    ...
+    ...
+    admin_members = ["user:foo.bar@uspto.com", "serviceAccount:foobaar-sa@appspot.gserviceaccount.com", "group:{group-email}"]
+  }
+}
+
+As you can see `admin_members` is a variable for adding all admin users.
+
+```
+
+### Developer role
+
+This is ideal role for developers and contributors who often work on GCP resources.
+User/group/service account added to this role gets access to create/view FedRamp approved GCP resources such as compute, Bigquery, Cloud SQL etc. Click here to see all approved GCP resource list.
+To add users to Developer role provide list of users in terraform.tfvars files `project_details -> your_project -> dev_members` section like shown below -
+```
+project_details = {
+  "project-1" = {
+    ...
+    ...
+    ...
+    dev_members = ["user:foo.bar@uspto.com", "serviceAccount:foobaar-sa@appspot.gserviceaccount.com", "group:{group-email}"]
+  }
+}
+
+```
+
+### Viewer role
+
+This role is generally for spectators who just want to view all GCP services.
+User/group/service account added to this role gets read only access to all FedRamp approved GCP resources such as compute, Bigquery, Cloud SQL etc. Click here to see all approved GCP resource list.
+To add users to Developer role provide list of users in terraform.tfvars files `project_details -> your_project -> viewer_members` section like shown below -
+```
+project_details = {
+  "project-1" = {
+    ...
+    ...
+    ...
+    viewer_members = ["user:foo.bar@uspto.com", "serviceAccount:foobaar-sa@appspot.gserviceaccount.com", "group:{group-email}"]
+  }
+}
+
+```
