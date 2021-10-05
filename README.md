@@ -20,7 +20,7 @@ This module is meant for use with Terraform 0.13. If you haven't
 0.12.x-compatible version of this module, the last released version
 intended for Terraform 0.12.x is [v6.4.1](https://registry.terraform.io/modules/terraform-google-modules/-iam/google/v6.4.1).
 
-![TF Version](https://github.com/indrajitp/terraform-gcp-custom-roles/blob/master/tf_version.PNG)
+![TF Version](tf_version.PNG)
 
 ## Upgrading
 
