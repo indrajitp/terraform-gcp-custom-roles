@@ -1,6 +1,21 @@
 # Apply GCP Organisation Policy Constraints
 
-Add some details here
+The Organization Policy Service gives you centralized and programmatic control over your organization's cloud resources. As the organization policy administrator, you will be able to configure constraints across your entire resource hierarchy.
+
+Organization policies are made up of constraints that allow you to:
+
+- Limit resource sharing based on domain.
+- Limit the usage of Identity and Access Management service accounts.
+- Restrict the physical location of newly created resources.
+There are many more constraints that give you fine-grained control of your organization's resources. For more information, see the list of [all Organization Policy Service constraints](https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints).
+
+## Requirements
+### Terraform plugins
+- [Terraform](https://www.terraform.io/downloads.html) >= 0.13.0
+- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) >= v2.5.0
+
+### Permissions
+In order to execute this module, the Service Account you run as must have the **Organization Policy Administrator** (`roles/orgpolicy.PolicyAdmin`) role.
 
 ## Compatibility
 This module is meant for use with Terraform 0.13. If you haven't
@@ -71,27 +86,3 @@ No output.
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-## Requirements
-### Terraform plugins
-- [Terraform](https://www.terraform.io/downloads.html) >= 0.13.0
-- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) >= v2.5.0
-
-### Permissions
-In order to execute this module, the Service Account you run as must have the **Organization Policy Administrator** (`roles/orgpolicy.PolicyAdmin`) role.
-
-## Install
-### Terraform
-Be sure you have the correct Terraform version (0.12.x), you can choose the binary here:
-- https://releases.hashicorp.com/terraform/
-
-### Terraform plugins
-
-- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) >= v2.5.0
-
-
-### Fast install (optional)
-For a fast install, please configure the variables on init_centos.sh  or init_debian.sh script and then launch it.
-
-The script will do:
-- Environment variables setting
-- Installation of base packages like wget, curl, unzip, gcloud, etc.
