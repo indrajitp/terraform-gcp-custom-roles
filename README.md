@@ -216,3 +216,17 @@ The script will do:
 [v1.1.1]: https://registry.terraform.io/modules/terraform-google-modules/iam/google/1.1.1
 [terraform-0.12-upgrade]: https://www.terraform.io/upgrade-guides/0-12.html
 
+notebooks.googleapis.com		
+ml.googleapis.com				
+automl.googleapis.com			
+logging.googleapis.com			
+monitoring.googleapis.com		
+cloudprofiler.googleapis.com
+run.googleapis.com
+cloudshell.googleapis.com
+sourcerepo.googleapis.com
+cloudtrace.googleapis.com
+datastore.googleapis.com
+datacatalog.googleapis.com
+cloudidentity.googleapis.com
+securitycenter.googleapis.com
