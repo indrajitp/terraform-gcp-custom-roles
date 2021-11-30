@@ -1,0 +1,166 @@
+##############dev user testing###########
+BigQuery completed
+Bigtable completed
+
+
+cloudbuild.builds.create
+(roles/cloudbuild.builds.editor)
+--------------------------------
+resourcemanager.projects.setIamPolicy
+resourcemanager.projects.getIamPolicy
+(roles/resourcemanager.projectIamAdmin)
+------------------------------------
+serviceusage.services.enable
+serviceusage.services.list
+(roles/serviceusage.serviceUsageAdmin)
+
+roles/iam.serviceAccountUser
+(need to add this role to Admin and Dev)
+
+#role needed for admin to create a source repo -
+source.repos.create
+
+()
+#for CDN Cloud CDN need to add role
+compute.backendservices.update
+compute.backendbuckets.update
+
+#for NAT permission needed
+compute.routers.update - roles/container.serviceAgent
+
+
+############################## APIs to enable ##############################################
+notebooks.googleapis.com					-	notebooks.googleapis.com
+ml.googleapis.com							-	AI Platform Training & Prediction API
+automl.googleapis.com						-	Cloud AutoML API
+logging.googleapis.com						-	Cloud Logging API
+monitoring.googleapis.com					-	cloud monitoring
+cloudprofiler.googleapis.com
+run.googleapis.com
+cloudshell.googleapis.com
+sourcerepo.googleapis.com
+cloudtrace.googleapis.com
+datastore.googleapis.com
+datacatalog.googleapis.com
+cloudidentity.googleapis.com
+securitycenter.googleapis.com
+########################## New Roles Need to Add ###########################
+1. AI platform -
+	##Admin
+		roles/notebooks.admin
+	##Dev
+		roles/notebooks.runner
+	##Viewer
+		roles/notebooks.viewer
+
+2. ML
+	##Admin
+		roles/ml.admin
+	##Dev
+		roles/ml.developer
+	##Viewer
+		roles/ml.viewer
+
+3. AutoML
+	##Admin
+		roles/automl.admin
+	##Dev
+		roles/automl.editor
+	##Viewer
+		roles/automl.viewer
+		
+4. Loggign
+	##Admin
+		roles/logging.admin
+	##Dev
+		roles/logging.logWriter
+		roles/logging.fieldAccessor
+		roles/logging.configWriter
+		roles/logging.bucketWriter
+	##Viewer
+		roles/logging.privateLogViewer
+		
+5. Monitoring
+	##Admin
+		roles/monitoring.admin
+	##Dev
+		roles/monitoring.alertPolicyEditor
+		roles/monitoring.viewer
+		roles/monitoring.dashboardEditor
+		roles/monitoring.metricWriter
+		roles/monitoring.metricsScopesAdmin
+		roles/monitoring.notificationChannelEditor
+		roles/monitoring.servicesEditor
+		roles/monitoring.uptimeCheckConfigEditor
+	##Viewer
+		roles/monitoring.viewer
+		
+7. cloudprofiler
+	##Admin
+		roles/cloudprofiler.agent
+	##Dev
+		roles/cloudprofiler.agent
+	##Viewer
+		roles/cloudprofiler.user
+8. Cloud Run
+	##Admin
+		roles/run.admin		
+	##Dev
+		roles/run.invoker
+	##Viewer
+		roles/run.viewer
+	
+9. Cloud Source Repo
+	##Admin
+		roles/source.admin
+	##Dev
+		roles/source.writer
+	##Viewer
+		roles/source.reader
+	
+10. Cloud Trace
+	##Admin
+		roles/cloudtrace.admin
+	##Dev
+		roles/cloudtrace.agent
+		roles/cloudtrace.user
+	##Viewer
+		roles/cloudtrace.user
+		
+11. Datastore 
+	##Admin
+		roles/datastore.owner
+	##Dev
+		roles/datastore.importExportAdmin
+		roles/datastore.indexAdmin
+		roles/datastore.keyVisualizerViewer
+		roles/datastore.user
+	##Viewer
+		roles/datastore.viewer
+		
+8. Data catalog
+	##Admin
+		roles/datacatalog.admin
+	##Dev
+		roles/datacatalog.categoryAdmin
+		roles/datacatalog.categoryFineGrainedReader
+		roles/datacatalog.entryGroupCreator
+		
+	##Viewer
+		roles/datacatalog.viewer
+	
+8. Cloudidentity
+	##Admin
+	##Dev
+	##Viewer
+	
+8. Securitycenter Roles
+	##Admin
+		roles/securitycenter.admin
+	##Dev
+		roles/securitycenter.adminEditor
+		roles/securitycenter.assetSecurityMarksWriter
+		roles/securitycenter.assetsDiscoveryRunner
+		roles/securitycenter.findingsEditor
+	##Viewer
+		roles/securitycenter.adminViewer
