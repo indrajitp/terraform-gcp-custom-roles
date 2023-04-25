@@ -1,14 +1,22 @@
-notebooks.googleapis.com		
-ml.googleapis.com				
-automl.googleapis.com			
-logging.googleapis.com			
-monitoring.googleapis.com		
-cloudprofiler.googleapis.com
-run.googleapis.com
-cloudshell.googleapis.com
-sourcerepo.googleapis.com
-cloudtrace.googleapis.com
-datastore.googleapis.com
-datacatalog.googleapis.com
-cloudidentity.googleapis.com
-securitycenter.googleapis.com
+# Create an IAM deny policy that denies a permission for the service account
+resource "google_iam_deny_policy" "deny_serviceAccountImpersonation" {
+  provider     = google-beta
+  parent       = urlencode("cloudresourcemanager.googleapis.com/projects/${project_id}")
+  name         = "deny-serviceAccountImpersonation-policy"
+  display_name = "deny any service Account Impersonation at project level policy"
+  rules {
+    deny_rule {
+      denied_principals  = ["principalSet://goog/public:all"]
+      denied_permissions = [
+			"iam.googleapis.com/serviceAccounts.implicitDelegation",
+			"iam.googleapis.com/serviceAccountKeys.create",
+			"iam.googleapis.com/serviceAccountKeys.delete",
+			"iam.googleapis.com/serviceAccounts.implicitDelegation",
+			"iam.googleapis.com/serviceAccounts.getOpenIdToken",
+			"iam.googleapis.com/serviceAccounts.getAccessToken",
+			"iam.googleapis.com/serviceAccounts.signBlob",
+			"iam.googleapis.com/serviceAccounts.signJwt"
+		]
+    }
+  }
+}
