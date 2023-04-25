@@ -1,7 +1,7 @@
-# Create an IAM deny policy that denies a permission for the service account
 resource "google_iam_deny_policy" "deny_serviceAccountImpersonation" {
   provider     = google-beta
-  parent       = urlencode("cloudresourcemanager.googleapis.com/projects/${project_id}")
+  for_each     = var.project_details 
+  parent       = urlencode("cloudresourcemanager.googleapis.com/projects/${each.value.project_id}")
   name         = "deny-serviceAccountImpersonation-policy"
   display_name = "deny any service Account Impersonation at project level policy"
   rules {
