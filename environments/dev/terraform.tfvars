@@ -2,7 +2,7 @@
 project_id = "tonal-vector-311808"
 
 ### All Viewer role details ###
-viewer_role_id = "ugcsViewerRole"
+viewer_role_id = "myViewerRole"
 viewer_description = "This is custom viewer role"
 viewer_members = "viewer-role-service-account"
 viewer_base_roles = ["roles/appengine.appViewer",
@@ -82,7 +82,7 @@ viewer_excluded_permissions = ["compute.organizations.listAssociations",
 ###
 ###
 ### All Admin role details ###
-admin_role_id = "ugcsAdminRole"
+admin_role_id = "myAdminRole"
 admin_description = "This is custom Admin role"
 admin_members = "admin-role-service-account"
 admin_permissions = ["bigquery.jobs.list", "bigquery.connections.list", "iam.roles.delete"]
@@ -395,7 +395,7 @@ admin_excluded_permissions = [ "resourcemanager.projects.list",
 ###
 ###
 ### All Dev role details ###
-dev_role_id = "ugcsDevRole"
+dev_role_id = "myDevRole"
 dev_description = "This is custom Dev role"
 dev_members = "dev-role-service-account"
 dev_permissions = ["bigquery.jobs.list", "bigquery.connections.list"]
