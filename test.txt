@@ -29,6 +29,7 @@ module "org-policy" {
   policy_type       = "list"
   organization_id   = "YOUR_ORG"
   enforce           = true
+  deny             = ["deploymentmanager.googleapis.com"]
   exclude_folders   = ["folders/folder-1-id", "folders/folder-2-id"]
   exclude_projects  = ["project3", "project4"]
 }
