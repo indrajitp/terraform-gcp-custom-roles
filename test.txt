@@ -27,9 +27,10 @@ module "org-policy" {
 
   constraint        = "constraints/serviceuser.services"
   policy_type       = "list"
+  policy_for	    = "organization"
   organization_id   = "YOUR_ORG"
   enforce           = true
-  deny             = ["deploymentmanager.googleapis.com"]
-  exclude_folders   = ["folders/folder-1-id", "folders/folder-2-id"]
+  deny              = ["deploymentmanager.googleapis.com"]
+  #exclude_folders  = ["folders/folder-1-id", "folders/folder-2-id"]
   exclude_projects  = ["project3", "project4"]
 }
